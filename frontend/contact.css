@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-style: none; 
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a,a:hover{
+    text-decoration: none;
+}
+
+.box{
+    height: 610px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact{
+    font-size: 30px;
+    background-color: aliceblue;
+    text-align: center;
+    height: 180px;
+    width: 300px;
+    border-radius: 5px;
+}
+.contact p{
+    padding-top: 30px;
+}
+
+footer{
+    background-color: #0a0a96;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+}

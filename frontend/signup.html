@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sign Up</title>
+		<link rel="stylesheet" href="/frontend/signup.css" />
+		<link rel="stylesheet" href="/frontend/navbar.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		/>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	</head>
+
+	<body>
+		<div id="nav-placeholder"></div>
+		<script>
+			$(function () {
+				$("#nav-placeholder").load("/frontend/navbar.html");
+			});
+		</script>
+
+		<div class="form-box">
+			<form class="form-data" method="POST" onsubmit="handleSubmit">
+				<h3>Sign Up</h3>
+				Name: <br />
+				<input
+					type="text"
+					name="name"
+					placeholder="Enter Name"
+					required
+				/><br />
+				Department Name: <br />
+				<input
+					type="text"
+					name="deptname"
+					placeholder="Enter Department"
+					required
+				/><br />
+				Academic Position: <br />
+				<input
+					type="text"
+					name="post"
+					placeholder="Enter Academic Position"
+					required
+				/><br />
+				Qualification: <br />
+				<textarea
+					type="text"
+					name="qualification"
+					placeholder="Enter Qualification"
+					required
+				></textarea
+				><br />
+				Email:
+				<br />
+				<input
+					type="email"
+					name="mail"
+					placeholder="Enter Email"
+					required
+				/><br />
+				Phone Number: <br />
+				<input
+					type="text"
+					name="phno"
+					placeholder="Enter Phone"
+					required
+				/><br />
+				Image:
+				<br />
+				<input
+					id="img"
+					type="file"
+					name="img"
+					placeholder="Enter Image"
+				/><br />
+				Interest Field :<br />
+				<textarea
+					type="text"
+					name="interestfield"
+					placeholder="Enter Interest Field"
+					required
+				></textarea
+				><br />
+
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+
+		<script>
+			$(function () {
+				$("#nav-placeholder").load("/frontend/navbar.html");
+			});
+
+			const formEl = document.querySelector(".form-data");
+
+			async function handleSubmit(event) {
+				event.preventDefault();
+				const formData = new FormData(event.target);
+				const data = {};
+				formData.forEach((value, key) => {
+					data[key] = value;
+				});
+
+				// Do whatever you need to do with the data object
+				console.log(data);
+				// For example, you can send the data to the backend using AJAX/fetch
+				const request = await fetch("http://127.0.0.1:3000/api/v1/teachers", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(data),
+				});
+				console.log(request.status);
+				if (request.status === 500) {
+					console.log("Invalid Department");
+				} else {
+					console.log("data Jai nai");
+				}
+				// Reset the form after handling the data
+				//formEl.reset();
+			}
+
+			formEl.addEventListener("submit", handleSubmit);
+		</script>
+
+		<footer>
+			<p>CUET</p>
+		</footer>
+	</body>
+</html>

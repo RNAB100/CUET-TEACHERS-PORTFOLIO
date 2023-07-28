@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="/frontend/style.css">
+    <link rel="stylesheet" href="/frontend/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+</head>
+<body>
+   
+
+    <div id="nav-placeholder">
+
+    </div>
+    <script>
+    $(function(){
+      $("#nav-placeholder").load("/frontend/navbar.html");
+    });
+    </script>
+
+    <div class="background">
+       <h1>CUET TEACHERS' PORTFOLIO</h1>
+    </div>
+    <hr>
+    <h2 id="fac">ACADEMIC FACULTY</h2>
+    <hr>
+    <div class="faculty">
+        <div class="boxr1">
+            <div class="box" id="b1">
+                <img src="/frontend/image/ECE.jpg" alt="ECE">
+                <h4>ELECTRICAL & COMPUTER ENG.</h4>
+                <ul>
+                    <li> <a href="#"> <i class="fa-solid fa-list"></i> Computer Science & Engineering </a> </li>
+                    <li> <a href="#"> <i class="fa-solid fa-list"></i> Electrical And Electronics Engineering </a> </li>
+                    <li> <a href="#"> <i class="fa-solid fa-list"></i> Electronics & Telecommunication Eng. </a> </li>
+                    <li> <a href="#"> <i class="fa-solid fa-list"></i> Biomedical Engineering </a> </li>
+                </ul>
+            </div>
+            <div class="box" id="b2">
+                <img src="/frontend/image/CE.jpg" alt="CE">
+                <h4>CIVIL ENGINEERING</h4>
+                <ul>
+                    <li> <a href="#"> <i class="fa-solid fa-list"></i> Civil Engineering </a> </li>
+                    <li> <a href="#"> <i class="fa-solid fa-list"></i> Disaster Engineering And Management </a> </li>
+                    <li> <a href="#"> <i class="fa-solid fa-list"></i> Water Resources Engineering </a> </li>
+                </ul>
+            </div>
+            <div class="box" id="b3">
+                <img src="/frontend/image/ME.jpg" alt="ME">
+                <h4>MECHANICAL ENGINEERING</h4>
+                <ul>
+                    <li> <a href="#"> <i class="fa-solid fa-list"></i> Mechanical Engineering </a> </li>
+                    <li> <a href="#"> <i class="fa-solid fa-list"></i> Petroleum And Mining Engineering </a> </li>
+                    <li> <a href="#"> <i class="fa-solid fa-list"></i> Mechatronics & Industrial Engineering </a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="boxr2">
+            <div class="box" id="b4">
+                <img src="/frontend/image/arch.jpg" alt="ME">
+                <h4>ARCHITECTURE & PLANNING</h4>
+                <ul>
+                    <li> <a href="#"> <i class="fa-solid fa-list"></i> Architecture </a> </li>
+                    <li> <a href="#"> <i class="fa-solid fa-list"></i> Urban & Regional Planning </a> </li>
+                    <li> <a href="#"> <i class="fa-solid fa-list"></i> Humanities </a> </li>
+                </ul>
+            </div>
+            <div class="box" id="b5">
+                <img src="/frontend/image/ECE.jpg" alt="ECE">
+                <h4>ENGINEERING & TECHNOLOGY</h4>
+                <ul>
+                    <li> <a href="#"> <i class="fa-solid fa-list"></i> Physics </a> </li>
+                    <li> <a href="#"> <i class="fa-solid fa-list"></i> Chemistry </a> </li>
+                    <li> <a href="#"> <i class="fa-solid fa-list"></i> Mathematics </a> </li>
+                    <li> <a href="#"> <i class="fa-solid fa-list"></i> Materials Science And Engineering </a> </li>
+                    <li> <a href="#"> <i class="fa-solid fa-list"></i> Nuclear Engineering </a> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>CUET</p>    
+    </footer>
+
+</body>
+</html>
