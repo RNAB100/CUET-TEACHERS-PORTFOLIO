@@ -22,13 +22,46 @@
     <form class="form-box">
         <div class="form-data">
             <h3>Login</h3>
-            Username: <br>
-            <input type="text" name="username" placeholder="Enter username"><br>
+            Usermail: <br>
+            <input type="text" name="mail" placeholder="Enter usermail"><br>
             Password: <br>
             <input type="password" name="password" placeholder="Enter password"><br>
             <button type="submit">submit</button>
         </div>
     </form>
 
+    <script>
+        const form = document.querySelector(".form-box");
+        form.addEventListener('submit', async(event) => {
+            event.preventDefault();
+            const formdata = new FormData(form);
+            const data = Object.fromEntries(formdata);
+            console.log(data);
+            const req=await fetch('http://127.0.0.1:3000/api/v1/teachers/login', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data)
+            })
+            if(req.status === 201) {
+                const islogged = true;
+                var obj = await req.json();
+                obj.islogged = islogged;
+                // console.log(obj);
+                localStorage.setItem('obj',JSON.stringify(obj));
+                window.location.href = '/frontend/teacher.html';
+                // location.replace("http://127.0.0.1:5500/frontend/teacher.html")
+            }
+            //console.log(request.status);
+            // .then((res) =>{
+            //     console.log(res.status);
+            //     res.json()})
+            // .then(data => console.log(data))
+            // .catch(error => console.log('error'));
+
+
+        })  
+    </script>
 </body>
 </html>

@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-style: none;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a,a:hover{
+    text-decoration: none;
+}
+
+hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-style: solid;
+}
+
+h2{
+    text-align: center;
+}
+
+.allTeacher{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dept-teacher{
+    margin: 15px;
+    height: 350px;
+    width: 400px;
+    background-color: aqua;
+}
+
+.image{
+    height: 160px;
+    width: 160px;
+    margin: 20px;
+    background-color: blue;
+}
+.teacherInfo{
+    margin: 20px;
+    background-color: yellow;
+}
+button{
+    height: 30px;
+    width: 100px;
+    margin-left: 20px;
+}

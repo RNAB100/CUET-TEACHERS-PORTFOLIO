@@ -2,8 +2,8 @@ const express = require('express');
 const {Dept} = require('../models/depts');
 const router = express.Router();
 
-router.get(`/`, async(req, res) =>{
-    const deptlist = await Dept.find().populate('teachers', 'name img');
+router.get(`/:deptname`, async(req, res) =>{
+    const deptlist = await Dept.findOne({deptname: req.params.deptname}).populate('teachers', 'name img post mail phno');
 
     if(!deptlist) {
         res.status(500).json({success: false});

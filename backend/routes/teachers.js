@@ -17,10 +17,11 @@ router.get(`/:id`, async (req, res) => {
 	const publicationlist = await Teacher.findById(req.params.id).populate(
 		"publication"
 	);
+	// console.log
 	if (!publicationlist) {
 		return res.status(500).send("No Publication");
 	}
-	res.send(publicationlist);
+	return res.status(201).send(publicationlist);
 });
 
 router.post(`/`, async (req, res) => {
@@ -42,6 +43,7 @@ router.post(`/`, async (req, res) => {
 		mail: req.body.mail,
 		phno: req.body.phno,
 		img: req.body.img,
+		password: req.body.password,
 		interestfield: req.body.interestfield,
 	});
 	const saveteacher = await teacher.save();
@@ -53,6 +55,24 @@ router.post(`/`, async (req, res) => {
 		dept.save();
 
 		res.send(saveteacher);
+	}
+});
+
+//login 
+router.post(`/login`, async (req, res) => {
+	const tech_by_mail = await Teacher.findOne({mail: req.body.mail});
+	if (!tech_by_mail) {
+		res.status(500).send("Invalid Mail/Password");
+	}
+	console.log(typeof(tech_by_mail.password));
+	console.log(typeof(req.body.password));
+
+	if(tech_by_mail.password === req.body.password) {
+		 res.status(201).json({tech_by_mail});
+		
+	}
+	else {
+		res.status(500).send("Login Failed");
 	}
 });
 
@@ -71,6 +91,7 @@ router.put("/:id", async (req, res) => {
 			mail: req.body.mail,
 			phno: req.body.phno,
 			img: req.body.img,
+			password: req.body.password,
 			interestfield: req.body.interestfield,
 			bio: req.body.bio,
 		},

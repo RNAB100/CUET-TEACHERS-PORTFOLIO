@@ -20,8 +20,11 @@ const teacherSchema = mongoose.Schema({
     },
     mail: String,
     img: {
+        type: Object,
+    },
+    password: {
         type: String,
-        default: ''
+        required: true
     },
     phno: String,
     interestfield: [String],

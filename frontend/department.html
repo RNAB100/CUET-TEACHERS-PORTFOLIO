@@ -22,25 +22,49 @@
 
     <!-- creating all department -->
     <ul class="dept-list">
-        <li> <a href="/frontend/teacher.html"> Computer Science & Engineering </a> </li>
-        <li> <a href="#"> Electrical And Electronics Engineering </a> </li>
-        <li> <a href="#"> Civil Engineering </a> </li>
-        <li> <a href="#"> Mechanical Engineering </a> </li>
-        <li> <a href="#"> Electronics & Telecommunication Eng. </a> </li>
-        <li> <a href="#"> Biomedical Engineering </a> </li>
-        <li> <a href="#"> Disaster Engineering And Management </a> </li>
-        <li> <a href="#"> Water Resources Engineering </a> </li>
-        <li> <a href="#"> Petroleum And Mining Engineering </a> </li>
-        <li> <a href="#"> Mechatronics & Industrial Engineering </a> </li>
-        <li> <a href="#"> Architecture </a> </li>
-        <li> <a href="#"> Urban & Regional Planning </a> </li>
-        <li> <a href="#"> Humanities </a> </li>
-        <li> <a href="#"> Physics </a> </li>
-        <li> <a href="#"> Chemistry </a> </li>
-        <li> <a href="#"> Mathematics </a> </li>
-        <li> <a href="#"> Materials Science And Engineering </a> </li>
-        <li> <a href="#"> Nuclear Engineering </a> </li>
+        <li> <a href='#' id="CSE" onclick="handleLinkClick(this)"> Computer Science & Engineering </a> </li>
+        <li> <a href="#" id="EEE" onclick="handleLinkClick(this)"> Electrical And Electronics Engineering </a> </li>
+        <li> <a href="#" id="CE" onclick="handleLinkClick(this)"> Civil Engineering </a> </li>
+        <li> <a href="#" id="ME" onclick="handleLinkClick(this)"> Mechanical Engineering </a> </li>
+        <li> <a href="#" id="ETE" onclick="handleLinkClick(this)"> Electronics & Telecommunication Eng. </a> </li>
+        <li> <a href="#" id="BME" onclick="handleLinkClick(this)"> Biomedical Engineering </a> </li>
+        <li> <a href="#" id="DEM" onclick="handleLinkClick(this)"> Disaster Engineering And Management </a> </li>
+        <li> <a href="#" id="WRE" onclick="handleLinkClick(this)"> Water Resources Engineering </a> </li>
+        <li> <a href="#" id="PME" onclick="handleLinkClick(this)"> Petroleum And Mining Engineering </a> </li>
+        <li> <a href="#" id="MIE" onclick="handleLinkClick(this)"> Mechatronics & Industrial Engineering </a> </li>
+        <li> <a href="#" id="ARCH" onclick="handleLinkClick(this)"> Architecture </a> </li>
+        <li> <a href="#" id="URP" onclick="handleLinkClick(this)"> Urban & Regional Planning </a> </li>
+        <li> <a href="#" id="HUM" onclick="handleLinkClick(this)"> Humanities </a> </li>
+        <li> <a href="#" id="PHY" onclick="handleLinkClick(this)"> Physics </a> </li>
+        <li> <a href="#" id="CHEM" onclick="handleLinkClick(this)"> Chemistry </a> </li>
+        <li> <a href="#" id="MATH" onclick="handleLinkClick(this)"> Mathematics </a> </li>
+        <li> <a href="#" id="MSE" onclick="handleLinkClick(this)"> Materials Science And Engineering </a> </li>
+        <li> <a href="#" id="NE" onclick="handleLinkClick(this)"> Nuclear Engineering </a> </li>
     </ul>
+
+    <script>
+        function handleLinkClick(clickedLink) {
+          const linkId = clickedLink.id;
+          console.log(`Clicked link ID: ${linkId}`);
+          console.log(typeof linkId);
+          localStorage.setItem('deptName',linkId);
+          window.location.href = '/frontend/facultyList.html';
+          // Do other actions with the link ID as needed
+
+            // var name = JSON.parse(localStorage.getItem(linkId));
+            // fetch('http://127.0.0.1:3000/api/v1/depts/'+name)
+            //     .then(res => {
+            //         return res.json();
+            //     })
+            //     .then(data => {
+            //         console.log(data);
+            //         console.log(data.name);
+
+
+            //     })
+            // .catch(error => console.log(error));
+        }
+        </script>
 
 
     <footer>
