@@ -34,14 +34,18 @@ a,a:hover{
     text-align: justify;
     border-radius: 5px;
 }
-.details h1, .details h4, .details p{
+.details h1, .details h3, .details p{
   margin-left: 15px;
+  margin-right: 15px;
 }
 .details h1{
   margin-top: 15px;
 }
-.details h4, .details p{
+.details p{
   font-size: 20px;
+}
+.details h3{
+  font-size: 25px;
 }
 table {
     border-collapse: collapse;

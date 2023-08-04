@@ -26,7 +26,7 @@ a,a:hover{
 .background h1{
     color: white;
     text-align: center;
-    padding: 190px;
+    padding: 150px;
     font-size: 50px;
     opacity: 80%;
 }
@@ -49,23 +49,48 @@ h2{
 
 .dept-teacher{
     margin: 15px;
-    height: 350px;
+    height: 380px;
     width: 400px;
-    background-color: aqua;
+    background-color:aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
 }
 
 .image{
-    height: 160px;
-    width: 160px;
+    height: 200px;
+    width: 200px;
     margin: 20px;
     background-color: blue;
+    
 }
 .teacherInfo{
-    margin: 20px;
-    background-color: yellow;
+    margin: 0px 20px 20px 20px;
+    width: calc(100% - 40px);
+    font-size: 20px;
 }
 button{
-    height: 30px;
-    width: 100px;
+    height: 40px;
+    width: 150px;
     margin-left: 20px;
+    margin-bottom: 20px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+button:hover{
+    transform: scale(1.2);
+}
+
+footer{
+    background-color: #0a0a96;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
 }

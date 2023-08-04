@@ -23,6 +23,13 @@
     <div class="form-box">
       <form class="form-data" method="POST" onsubmit="handleSubmit">
         <h3>Update Information</h3>
+        Email:
+        <br />
+        <input
+          type="email"
+          name="mail"
+          required
+        /><br />
         Name: <br />
         <input
           type="text"
@@ -44,15 +51,7 @@
           placeholder="Enter Qualification"
           required
         ></textarea
-        ><br />
-        Email:
-        <br />
-        <input
-          type="email"
-          name="mail"
-          placeholder="Enter Email"
-          required
-        /><br />
+        ><br/>
         Password:
         <br />
         <input
@@ -95,5 +94,16 @@
     <footer>
         <p>CUET</p>    
     </footer>
+
+
+    <script>
+      var obj = JSON.parse(localStorage.getItem("obj"));
+      console.log(obj.id);
+      var defaultMail = document.querySelector('input[name="mail"]');
+      console.log(defaultMail);
+      defaultMail.value = obj.id;
+      defaultMail.disabled = true;
+    </script>
+
   </body>
 </html>

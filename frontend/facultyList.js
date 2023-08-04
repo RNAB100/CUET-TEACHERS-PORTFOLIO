@@ -1,7 +1,7 @@
 // var deptName = localStorage.getItem("deptName");
 var deptName = localStorage.getItem("deptName");
 
-const background=`<h1>WELCOME TO DEPARTMENT OF ${deptName}</h1>`;
+const background=`<h1>WELCOME TO<br>DEPARTMENT OF ${deptName}</h1>`;
 document.querySelector(".background").innerHTML = background;
 
 const facultylist = "<hr><h2>Faculty List</h2><hr>";
@@ -27,10 +27,10 @@ fetch("http://127.0.0.1:3000/api/v1/depts/" + deptName)
       var elementImage = document.createElement("div");
       elementImage.classList.add("image");
       elementDiv.appendChild(elementImage);
-      var elementName = document.createTextNode("Name : " + teacherInfo.name);
-      var elementPosition = document.createTextNode("Position : "+teacherInfo.post);
-      var elementEmail = document.createTextNode("Email : "+teacherInfo.mail);
-      var elementPhno = document.createTextNode("Phone : "+teacherInfo.phno);
+      var elementName = document.createTextNode(teacherInfo.name);
+      var elementPosition = document.createTextNode(teacherInfo.post);
+      var elementEmail = document.createTextNode(teacherInfo.mail);
+      var elementPhno = document.createTextNode(teacherInfo.phno);
       var elementInfo = document.createElement("div");
       elementInfo.classList.add("teacherInfo");
       elementInfo.appendChild(elementName);

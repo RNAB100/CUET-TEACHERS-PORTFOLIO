@@ -39,41 +39,46 @@
           mainDiv.appendChild(teacherName);
           mainDiv.appendChild(document.createElement("br"));
 
-          var postName = document.createElement("h4");
+          var postName = document.createElement("h3");
           postName.appendChild(document.createTextNode(data.post));
           mainDiv.appendChild(postName);
           mainDiv.appendChild(document.createElement("br"));
 
           var emailAdd = document.createElement("p");
-          emailAdd.appendChild(
-            document.createTextNode("E-mail Address: " + data.mail)
-          );
+          emailAdd.innerHTML = `<b>Email Address : </b>${data.mail}`;
+          // emailAdd.appendChild(
+          //   document.createTextNode("E-mail Address: " + data.mail)
+          // );
           mainDiv.appendChild(emailAdd);
           mainDiv.appendChild(document.createElement("br"));
 
           var phNo = document.createElement("p");
-          phNo.appendChild(document.createTextNode("Mobile: " + data.phno));
+          phNo.innerHTML = `<b>Mobile : </b>${data.phno}`;
+          // phNo.appendChild(document.createTextNode("Mobile: " + data.phno));
           mainDiv.appendChild(phNo);
           mainDiv.appendChild(document.createElement("br"));
 
           var aboutMy = document.createElement("p");
-          aboutMy.appendChild(
-            document.createTextNode("About Myself: " + data.bio)
-          );
+          aboutMy.innerHTML = `<b>About Myself : </b>${data.bio}`;
+          // aboutMy.appendChild(
+          //   document.createTextNode("About Myself: " + data.bio)
+          // );
           mainDiv.appendChild(aboutMy);
           mainDiv.appendChild(document.createElement("br"));
 
           var fieldInterest = document.createElement("p");
-          fieldInterest.appendChild(
-            document.createTextNode("Field of Interest: " + data.interestfield)
-          );
+          fieldInterest.innerHTML = `<b>Field of Interest : </b>${data.interestfield}`;
+          // fieldInterest.appendChild(
+          //   document.createTextNode("Field of Interest: " + data.interestfield)
+          // );
           mainDiv.appendChild(fieldInterest);
           mainDiv.appendChild(document.createElement("br"));
 
           var Qualification = document.createElement("p");
-          Qualification.appendChild(
-            document.createTextNode("Qualifications: " + data.qualification)
-          );
+          Qualification.innerHTML = `<b>Qualifications : </b>${data.qualification}`;
+          // Qualification.appendChild(
+          //   document.createTextNode("Qualifications: " + data.qualification)
+          // );
           mainDiv.appendChild(Qualification);
           mainDiv.appendChild(document.createElement("br"));
 
@@ -122,10 +127,21 @@
 
         function handleUpdate(clickedLink) {
           console.log(clickedLink.id)
-          
+          var obj = {
+            id : clickedLink.id
+          }
+          console.log(obj);
+          localStorage.setItem('obj',JSON.stringify(obj));
+          window.location.href = '/frontend/updateInfo.html';
         }
         function handleAddPub(clickedLink) {
           console.log(clickedLink.id)
+          var obj = {
+            id : clickedLink.id
+          }
+          console.log(obj);
+          localStorage.setItem('obj',JSON.stringify(obj));
+          window.location.href = '/frontend/addPublication.html';
         }
     </script>
     
