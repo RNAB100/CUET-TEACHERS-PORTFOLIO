@@ -83,7 +83,7 @@
             var UpdateButton = document.createElement("button");
             UpdateButton.setAttribute("class", "update-info");
             UpdateButton.setAttribute("type", "button");
-            UpdateButton.setAttribute("id", "new_info");
+            UpdateButton.setAttribute("id", data.mail);
             UpdateButton.setAttribute('onclick','handleUpdate(this)');
             UpdateButton.textContent = "Update Details";
             flexButton.appendChild(UpdateButton);
@@ -110,7 +110,7 @@
             var AddButton = document.createElement("button");
             AddButton.setAttribute("class", "add-pub");
             AddButton.setAttribute("type", "button");
-            AddButton.setAttribute("id", "new_pub");
+            AddButton.setAttribute("id", data.mail);
             AddButton.setAttribute('onclick','handleAddPub(this)');
             AddButton.textContent = "Add Publication";
             flexButton.appendChild(AddButton);
@@ -122,6 +122,7 @@
 
         function handleUpdate(clickedLink) {
           console.log(clickedLink.id)
+          
         }
         function handleAddPub(clickedLink) {
           console.log(clickedLink.id)
