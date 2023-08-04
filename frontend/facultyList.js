@@ -1,11 +1,11 @@
+// var deptName = localStorage.getItem("deptName");
 var deptName = localStorage.getItem("deptName");
 
 const background=`<h1>WELCOME TO DEPARTMENT OF ${deptName}</h1>`;
 document.querySelector(".background").innerHTML = background;
 
 const facultylist = "<hr><h2>Faculty List</h2><hr>";
-document.getElementById("faculty").innerHTML = facultylist;
-
+document.getElementById("faculty").innerHTML = facultylist;
 
 console.log(deptName);
 // var name = JSON.parse(localStorage.getItem(linkId));

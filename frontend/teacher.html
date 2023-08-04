@@ -78,11 +78,16 @@
           mainDiv.appendChild(document.createElement("br"));
 
           if (logStatus === true) {
+            var flexButton = document.createElement("div");
+            flexButton.classList.add('flexButton');
             var UpdateButton = document.createElement("button");
             UpdateButton.setAttribute("class", "update-info");
             UpdateButton.setAttribute("type", "button");
-            UpdateButton.textContent = "view details";
-            mainDiv.appendChild(UpdateButton);
+            UpdateButton.setAttribute("id", "new_info");
+            UpdateButton.setAttribute('onclick','handleUpdate(this)');
+            UpdateButton.textContent = "Update Details";
+            flexButton.appendChild(UpdateButton);
+            document.querySelector('.add-btn').appendChild(flexButton);
           }
 
           var table = document.getElementById("pub-table");
@@ -97,9 +102,32 @@
               else cell.innerHTML = "Teachersinfo" + i;
             }
           }
+
+          var publicationAdd = document.querySelector('.publication');
+          if (logStatus === true) {
+            var flexButton = document.createElement("div");
+            flexButton.classList.add('flexButton');
+            var AddButton = document.createElement("button");
+            AddButton.setAttribute("class", "add-pub");
+            AddButton.setAttribute("type", "button");
+            AddButton.setAttribute("id", "new_pub");
+            AddButton.setAttribute('onclick','handleAddPub(this)');
+            AddButton.textContent = "Add Publication";
+            flexButton.appendChild(AddButton);
+            publicationAdd.appendChild(flexButton);
+          }
         })
         .catch((error) => console.log(error));
+
+
+        function handleUpdate(clickedLink) {
+          console.log(clickedLink.id)
+        }
+        function handleAddPub(clickedLink) {
+          console.log(clickedLink.id)
+        }
     </script>
+    
 
     <div class="portfolio">
       <div class="profile_img">
@@ -115,6 +143,7 @@
             <p>Qualification</p>
             <p>Publication</p> -->
       </div>
+      <div class="add-btn"> </div>
       <div class="publication">
         <h2>Publications</h2>
         <div>
@@ -134,8 +163,7 @@
             </tbody>
           </table>
         </div>
-        <button type="submit">Add</button>
-      
+              
       </div>
     </div>
 

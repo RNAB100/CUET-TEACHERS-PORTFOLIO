@@ -18,7 +18,6 @@ a,a:hover{
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    box-sizing: border-box;
 }
 .profile_img{
     width: 300px;
@@ -26,17 +25,24 @@ a,a:hover{
     background-color: aliceblue;
     margin: 50px;
     flex: none;
+    border-radius: 5px;
 }
 .details{
-    width: 100%;
+    width: calc(100% - 100px);
     height: 100%;
     background-color: aliceblue;
-    margin-left: 50px;
-    margin-right: 50px;
     text-align: justify;
-    box-sizing: border-box;
+    border-radius: 5px;
 }
-
+.details h1, .details h4, .details p{
+  margin-left: 15px;
+}
+.details h1{
+  margin-top: 15px;
+}
+.details h4, .details p{
+  font-size: 20px;
+}
 table {
     border-collapse: collapse;
     width: 100%;
@@ -53,7 +59,26 @@ table {
     background-color: #f2f2f2; /* Optional background color for header cells */
   }
   .publication{
-    width: 100%;
-    margin: 50px;
-    box-sizing: border-box;
+    margin-top: 50px;
+    width: calc(100% - 100px);
+  }
+
+  button{
+    height: 40px;
+    width: 200px;
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+  }
+  .flexButton{
+    display: flex;
+    justify-content: center;
+  }
+  .add-pub{
+    margin-bottom: 50px;
+  }
+
+  .update-info{
+    margin-top: 20px;
   }
