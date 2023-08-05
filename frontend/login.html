@@ -45,7 +45,7 @@
                 body: JSON.stringify(data)
             })
             if(req.status === 201) {
-                
+                alert("Login Successful!");
                 const islogged = true;
                 var obj = await req.json();
                 obj.islogged = islogged;

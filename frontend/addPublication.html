@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="/frontend/signup.css" />
+    <title>Add Publication</title>
+    <link rel="stylesheet" href="/frontend/addPublication.css" />
     <link rel="stylesheet" href="/frontend/navbar.css" />
     <link
       rel="stylesheet"
@@ -74,27 +74,40 @@
           data[key] = value;
         });
 
-    //     // Do whatever you need to do with the data object
+        //     // Do whatever you need to do with the data object
         console.log(id);
         // For example, you can send the data to the backend using fetch
-        const request = await fetch(`http://127.0.0.1:3000/api/v1/publications/${id}`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        });
+        const request = await fetch(
+          `http://127.0.0.1:3000/api/v1/publications/${id}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          }
+        );
         console.log(request.status);
         if (request.status === 500) {
           console.log("Invalid Department");
         } else {
           console.log("data gese");
+          var obj = {
+            islogged: true,
+          };
+          const tech_by_mail = {
+            _id: id,
+          };
+          obj.tech_by_mail = tech_by_mail;
+          console.log(obj);
+          localStorage.setItem("obj", JSON.stringify(obj));
+          window.location.href = "/frontend/teacher.html";
         }
         // Reset the form after handling the data
         //formEl.reset();
-   }
+      }
 
-    formEl.addEventListener("submit", handleSubmit);
+      formEl.addEventListener("submit", handleSubmit);
     </script>
 
     <footer>

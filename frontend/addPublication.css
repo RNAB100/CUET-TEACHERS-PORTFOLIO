@@ -24,14 +24,14 @@ a,a:hover{
     background-color: aliceblue;
     font-size: 20px;
     width: 350px;
-    height: 680px;
+    height: 650px;
     margin-top: 50px;
     margin-bottom: 50px;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 input,button,textarea{
     border-style: solid;
-    border-radius: 3px;
+    border-radius: 5px;
     height: 40px;
     width: 310px;
     padding: 2px;
@@ -48,6 +48,11 @@ button{
     margin-top: 20px;
     background-color: #1c077d;
     color:white;
+    cursor: pointer;
+}
+
+button:hover{
+    transform: scale(1.1);
 }
 
 h3{
