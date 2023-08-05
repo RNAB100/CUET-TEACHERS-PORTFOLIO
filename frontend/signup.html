@@ -122,8 +122,11 @@
 				console.log(request.status);
 				if (request.status === 500) {
 					console.log("Invalid Department");
+					alert("Invalid Information");
 				} else {
 					console.log("data gese");
+					alert("Registration Successful!");
+					window.location.href="login.html";
 				}
 				// Reset the form after handling the data
 				//formEl.reset();

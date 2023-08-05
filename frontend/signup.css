@@ -31,7 +31,7 @@ a,a:hover{
 }
 input,button,textarea{
     border-style: solid;
-    border-radius: 3px;
+    border-radius: 5px;
     height: 40px;
     width: 310px;
     padding: 2px;
@@ -48,8 +48,11 @@ button{
     margin-top: 20px;
     background-color: #1c077d;
     color:white;
+    cursor: pointer;
 }
-
+button:hover{
+    transform: scale(1.1);
+}
 h3{
     text-align: center;
     padding-bottom: 20px;

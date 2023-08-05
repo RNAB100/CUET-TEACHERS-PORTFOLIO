@@ -30,7 +30,7 @@ a,a:hover{
 }
 input,button{
     border-style: solid;
-    border-radius: 3px;
+    border-radius: 5px;
     height: 30px;
     width: 260px;
     padding: 2px;
@@ -41,6 +41,11 @@ button{
     margin-top: 20px;
     background-color: #1c077d;
     color:white;
+    cursor: pointer;
+}
+
+button:hover{
+    transform: scale(1.1);
 }
 
 h3{

@@ -3,6 +3,21 @@ const { Teacher } = require("../models/teachers");
 const { Dept } = require("../models/depts");
 const router = express.Router();
 
+router.delete('/delete/:id', async (req, res)=>{
+	console.log(req.params.id);
+	const del_teacher = await Teacher.findByIdAndRemove(req.params.id);
+	console.log(del_teacher);
+	if(del_teacher) {
+		//const dept = await Dept.findOne({_id: del_teacher.dept});
+		//var teacherlist = Dept.teachers;
+		//teacherlist = teacherlist.filter((element) => element !== del_teacher.id);
+		return res.status(200).json({success: true, message: 'Account deleted successfully!'})
+	}
+	else {
+		return res.status(404).json({success: false , message: "Problem occurred"})
+	}
+})
+
 router.get(`/`, async (req, res) => {
 	const teacherlist = await Teacher.find();
 
@@ -77,20 +92,14 @@ router.post(`/login`, async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
-	const dept = await Dept.findById(req.body.dept);
-	if (!dept) {
-		return res.status(400).send("Invalid Department");
-	}
 	const teacher = await Teacher.findByIdAndUpdate(
 		req.params.id,
 		{
 			name: req.body.name,
-			dept: req.body.dept,
 			post: req.body.post,
 			qualification: req.body.qualification,
 			mail: req.body.mail,
 			phno: req.body.phno,
-			img: req.body.img,
 			password: req.body.password,
 			interestfield: req.body.interestfield,
 			bio: req.body.bio,
@@ -103,4 +112,6 @@ router.put("/:id", async (req, res) => {
 	res.send(teacher);
 });
 
+
+ 
 module.exports = router;

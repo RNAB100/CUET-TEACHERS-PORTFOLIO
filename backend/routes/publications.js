@@ -3,15 +3,16 @@ const {Publication} = require('../models/publications');
 const { Teacher } = require('../models/teachers');
 const router = express.Router();
 
-router.post(`/`, async(req, res) =>{
-    const teacher = await Teacher.findById(req.body.teacherid);
+router.post(`/:id`, async(req, res) =>{
+    const teacher = await Teacher.findById(req.params.id);
+    console.log(teacher);
     if(!teacher) {
         return res.status(400).send('Invalid Teacher');
     }
     const publication = new Publication({
         title: req.body.title,
-        teacherid: req.body.teacherid,
         authors: req.body.authors,
+        teacherid: req.params.id,
         information: req.body.information,
         year: req.body.year
     })

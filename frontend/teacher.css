@@ -74,6 +74,10 @@ table {
     color: white;
     font-size: 20px;
     border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover{
+    transform: scale(1.1);
   }
   .flexButton{
     display: flex;

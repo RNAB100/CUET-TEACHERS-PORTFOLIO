@@ -45,14 +45,17 @@
                 body: JSON.stringify(data)
             })
             if(req.status === 201) {
+                
                 const islogged = true;
                 var obj = await req.json();
                 obj.islogged = islogged;
                 // console.log(obj);
                 localStorage.setItem('obj',JSON.stringify(obj));
                 window.location.href = '/frontend/teacher.html';
+                
                 // location.replace("http://127.0.0.1:5500/frontend/teacher.html")
             }
+            else alert("Invalid Email or Password")
             //console.log(request.status);
             // .then((res) =>{
             //     console.log(res.status);
