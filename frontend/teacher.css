@@ -27,6 +27,12 @@ a,a:hover{
     flex: none;
     border-radius: 5px;
 }
+.profile_img img{
+  height: 370px;
+  width: 270px;
+  margin: 15px;
+  border-radius: 5px;
+}
 .details{
     width: calc(100% - 100px);
     height: 100%;

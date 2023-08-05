@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const teacherSchema = mongoose.Schema({
     name: {
-       type: String,
-       required: true
+        type: String,
+        required: true
     },
     dept: {
         type: mongoose.Schema.Types.ObjectId,
@@ -18,22 +18,26 @@ const teacherSchema = mongoose.Schema({
         type: [String],
         required: true
     },
-    mail: String,
-    img: {
-        type: Object,
-    },
     password: {
         type: String,
         required: true
     },
-    phno: String,
+    
+    img: {
+        type: String,
+    },
+    mail: {
+        type: String
+    },
+    phno: {
+        type:String},
     interestfield: [String],
     bio: String,
     publication: {
         type: [mongoose.Schema.Types.ObjectId],
-        ref: 'Publication' 
+        ref: 'Publication'
     }
 
 })
 
-exports.Teacher = mongoose.model('Teacher', teacherSchema);
+exports.Teacher = mongoose.model('Teacher', teacherSchema);

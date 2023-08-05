@@ -44,10 +44,16 @@ router.post(`/`, async (req, res) => {
 	const mail = req.body.mail;
 	console.log(mail);
 	console.log(req.body);
+	// var signUpData = {
+	// 	statuslog:false,
+	// }
 	if (!dept) {
+		alert('Invalid dept');
+		//localStorage.setItem('signUpData',JSON.stringify(signUpData));
 		return res.status(500).send("Invalid Department");
 	}
 	if (!mail.includes("@cuet.ac.bd")) {
+		//localStorage.setItem('signUpData',JSON.stringify(signUpData));
 		return res.status(600).send("Invalid Mail");
 	}
 	const teacher = new Teacher({
@@ -57,20 +63,23 @@ router.post(`/`, async (req, res) => {
 		qualification: req.body.qualification,
 		mail: req.body.mail,
 		phno: req.body.phno,
-		img: req.body.img,
+		img: req.file.filename,
 		password: req.body.password,
 		interestfield: req.body.interestfield,
 	});
 	const saveteacher = await teacher.save();
 	if (!saveteacher) {
+		//localStorage.setItem('signUpData',JSON.stringify(signUpData));
 		return res.status(500).send("Cannot save");
 	} else {
 		//update dept teachers
 		await dept.teachers.push(saveteacher.id);
 		dept.save();
-
+		//signUpData.statuslog=true;
+		//localStorage.setItem('signUpData',JSON.stringify(signUpData));
 		res.send(saveteacher);
 	}
+	
 });
 
 //login 

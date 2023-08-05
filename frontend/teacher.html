@@ -45,6 +45,10 @@
           mainDiv.appendChild(postName);
           mainDiv.appendChild(document.createElement("br"));
 
+          var img=document.createElement("img");
+          img.src=`./image/${data.img}`;
+          document.querySelector('.profile_img').appendChild(img);
+
           var emailAdd = document.createElement("p");
           emailAdd.innerHTML = `<b>Email Address : </b>${data.mail}`;
           // emailAdd.appendChild(
@@ -199,7 +203,7 @@
 
     <div class="portfolio">
       <div class="profile_img">
-        <img src="#" alt="profile picture" />
+        
       </div>
       <div class="details">
         <!-- <h3>Teacher name</h3>
