@@ -24,8 +24,16 @@ fetch("http://127.0.0.1:3000/api/v1/depts/" + deptName)
       var teacherInfo = data.teachers[i];
       var elementDiv = document.createElement("div");
       elementDiv.classList.add("dept-teacher");
+
       var elementImage = document.createElement("div");
       elementImage.classList.add("image");
+
+      var newImage = document.createElement('img');
+      newImage.src=`./image/${teacherInfo.img}`;
+      console.log(teacherInfo.img);
+      elementImage.appendChild(newImage);
+
+
       elementDiv.appendChild(elementImage);
       var elementName = document.createTextNode(teacherInfo.name);
       var elementPosition = document.createTextNode(teacherInfo.post);

@@ -48,7 +48,7 @@ router.post(`/`, async (req, res) => {
 	// 	statuslog:false,
 	// }
 	if (!dept) {
-		alert('Invalid dept');
+		//alert('Invalid dept');
 		//localStorage.setItem('signUpData',JSON.stringify(signUpData));
 		return res.status(500).send("Invalid Department");
 	}
