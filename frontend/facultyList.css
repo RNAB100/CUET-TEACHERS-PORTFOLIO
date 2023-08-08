@@ -49,7 +49,7 @@ h2{
 
 .dept-teacher{
     margin: 15px;
-    height: 380px;
+    height: 400px;
     width: 400px;
     background-color:aliceblue;
     display: flex;
@@ -89,6 +89,7 @@ button:hover{
 }
 
 footer{
+    margin-top: 20px;
     background-color: #0a0a96;
     height: 40px;
     width: 100%;

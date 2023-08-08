@@ -48,13 +48,16 @@ button{
     margin-top: 20px;
     background-color: #1c077d;
     color:white;
+    cursor: pointer;
 }
 
 h3{
     text-align: center;
     padding-bottom: 20px;
 }
-
+button:hover{
+    transform: scale(1.1);
+}
 footer{
     background-color: #0a0a96;
     height: 40px;

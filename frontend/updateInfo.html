@@ -125,6 +125,22 @@
           }
         );
         console.log(request.status);
+        if (request.status === 500) {
+          alert("Update Failed");
+        } else {
+          alert("Update Successful!");
+          console.log("data gese");
+          var Obj = {
+            islogged: true,
+          };
+          const tech_by_mail = {
+            _id: id,
+          };
+          Obj.tech_by_mail = tech_by_mail;
+          console.log(Obj);
+          localStorage.setItem("obj", JSON.stringify(Obj));
+          window.location.href = "/frontend/teacher.html";
+        }
 
         // Reset the form after handling the data
         //formEl.reset();
