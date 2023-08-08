@@ -9,7 +9,7 @@ document.getElementById("faculty").innerHTML = facultylist;
 
 console.log(deptName);
 // var name = JSON.parse(localStorage.getItem(linkId));
-fetch("http://127.0.0.1:3000/api/v1/depts/" + deptName)
+fetch("https://cuet-teachers-portfolio-zvxe.onrender.com/api/v1/depts/" + deptName)
   .then((res) => {
     return res.json();
   })

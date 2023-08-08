@@ -26,7 +26,7 @@
       const id = obj.tech_by_mail._id;
       var logStatus = obj.islogged;
       console.log(obj.islogged);
-      fetch("http://127.0.0.1:3000/api/v1/teachers/" + id)
+      fetch("https://cuet-teachers-portfolio-zvxe.onrender.com/api/v1/teachers/" + id)
         .then((res) => {
           return res.json();
         })
@@ -240,7 +240,7 @@
     </div>
 
     <!-- <script>
-        fetch('http://127.0.0.1:3000/api/v1/depts')
+        fetch('https://cuet-teachers-portfolio-zvxe.onrender.com/api/v1/depts')
             .then(res =>{
                 return res.json();
             })
