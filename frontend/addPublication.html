@@ -89,9 +89,10 @@
         );
         console.log(request.status);
         if (request.status === 500) {
-          console.log("Invalid Department");
+          alert("Invalid Information");
         } else {
-          console.log("data gese");
+          //console.log("data gese");
+          alert("Added Publication Successfully!");
           var obj = {
             islogged: true,
           };
