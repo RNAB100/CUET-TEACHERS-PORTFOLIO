@@ -30,6 +30,9 @@ a,a:hover{
     color:black;
     margin-left: 20px;
 }
+.dept-list li a:hover{
+    color: green;
+}
 
 footer{
     background-color: #0a0a96;
