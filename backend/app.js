@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
+//for image
 const multer = require('multer');
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
